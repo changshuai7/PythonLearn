@@ -123,6 +123,7 @@ print(result)
 src_str1 = r'C:\python\codes\02\2.4'
 print(src_str1)
 
+# TODO P25 原始字符串。
 src_str2 = r'"Let\'s go" world'
 print(src_str2)
 
