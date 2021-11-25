@@ -59,11 +59,11 @@ print(repr(obj))
 # input()函数用于向用户生成一条提示，然后获取用户输入的内容。
 # 由于 input()函数总会将用户 输入的内容放入字符串中，因此用户可以输入任何内容， input()函数总是返回一个字符串。
 
-"""
+
 # 演示的时候放开
 input_start = input('\n\n请输入:\n')
 print("输入结果为", input_start, ",类型为", type(input_start))
-"""
+
 # 无论输入哪种内容，始终可以看到 input()函数返回字符
 
 # 需要指出的是， Python2.x提供了一个 raw input()函数，该 raw_input()函数就相当于 Python3.x中的 input()函数。
