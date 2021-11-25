@@ -35,7 +35,7 @@ print('最小字符：', min(s))
 # 以str()方法为例
 print(dir(str))
 # print(help(str))
-print(help(str.title)) # 查看某个方法的帮助文档
+print(help(str.title))  # 查看某个方法的帮助文档
 
 # 以“__”开头、“__”结尾的方法被约定成私有方法， 不希望被外部直接调用。
 
@@ -45,7 +45,7 @@ print(help(str.title)) # 查看某个方法的帮助文档
 # lstrip(): 删除字符串前后的空白。
 # rstrip(): 删除字符串前面(左边)的空白。
 # rstrip(): 删除字符串后面(右边)的空白。
-# 但如果为方法传入指定参数， 则可删除该字符串左边/右边的指定字符
+# 但如果为方法传入指定参数（默认是空格）， 则可删除该字符串左边/右边的指定字符，
 
 # Python 的 str 是不可变的,因此这三个方法只是返回字符串前面或后面空白被删除之后的副 本 ，并没有真正改变字符串本身 。
 
@@ -53,6 +53,33 @@ s_trip = "  test   "
 print(s_trip.lstrip())
 print(s_trip.rstrip())
 
-# TODO 这里不太理解 P32页，删除字符串前后指定字符
-s_trip_2 = 'i think it is a scarecrow'
-print('结果:', s_trip_2.lstrip('i'))
+s_trip_2 = '88888888i think it is a scarecrow88888888'
+print('结果:', s_trip_2.lstrip('8'))
+
+#  二、查找、替换相关的方法。
+# str还提供了如下常用的执行 查找 、替换等操作的方法 。
+# startswith():判断字符串是否以指定子串开头。
+# endswith():判断字符串是否以指定子串结尾 。
+# find(): 查找指定子串在字符串中出现的位置，如果没有找到指定子串 ，则返回-1
+# index(): 查找指定子串在字符串中出现的位置，如果没有找到指定子串，则引发 ValueError 错误。
+# replace(): 使用指定子串替换字符串中的目标子串 。
+# translate(): 使用指定的翻译映射表对字符串执行替换。
+
+s_method = 'mty is a good girl'
+print(s_method.startswith('m'))
+print(s_method.endswith('girl'))
+print(s_method.find('a'))
+print(s_method.index('m'))
+print(s_method.replace('good', 'bad'))
+
+table = {97: 945, 98: 946, 116: 964}
+print(s_method.translate(table))
+
+# 三、分割、连接方法
+# Python 还为 str 提供了分割和连 接方法 。
+# 》 split(): 将字符串按指定分割符分割成多个短语。
+# 》 join():  将多个短语连接成字符串。
+
+split_s = "mty is a good girl"
+print(split_s.split(" "))
+print('/'.join(split_s.split(" ")))
