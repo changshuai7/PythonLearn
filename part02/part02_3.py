@@ -10,6 +10,7 @@ print(type(a))
 # Python 的整型支持 None 值(空值)，
 b = None
 print(b)
+print(type(b))
 
 
 # Python 的整型数值有 4 种表示形式 。
