@@ -146,3 +146,35 @@ list_12[0:4:2] = ['HELLO', 'WORLD']
 print(list_12)
 
 # 3.5 列表的其他常用方法
+print('\n===================列表常用方法===================\n')
+# 》 count():用于统计列表中某个元素出现的次数。
+# 》 index():用于判断某个元素在列表中出现的位置。
+# 》 pop():用于将列表当成“技”使用，实现元素出栈功能 。
+# 》 reverse():用于将列表中的元素反向存放。
+# 》 sort(): 用于对列表元素排序。
+
+# ########### count()
+
+list_13 = ['a', 'b', 'c', 'd', 'e', 'a']
+print('a.count=', list_13.count('a'))
+
+# ########### index()
+
+# index():index()方法用于定位某个元素在列表中出现的位置，如果该元素没有出现，则会引发 ValueError错误 。
+# 在使用 index()方法时还可传入 start、 end 参数，用于在列表的指定范围内搜索元素。
+
+print('a.index=', list_13.index('a'), '指定范围index', list_13.index('a', 1))
+
+# ########### pop()
+
+# pop()方法用于实现元素出栈功能。战是一种特殊的数据结构，它可实现先入后出(FILO)功 能，即先加入栈的元素，反而后出栈 。
+# python没有push方法，我们可以使用 append()方法末代替 push()，实现入栈操作。
+# pop()的返回值为出栈的元素
+
+list_14 = ['a', 'b', 'c', 'd', 'e']
+print(list_14)
+list_14.append('add1')
+list_14.append('add2')
+print('入栈后列表为', list_14)
+print('出栈元素为：', list_14.pop(), '出栈后结果为', list_14)
+print('出栈元素为：', list_14.pop(), '出栈后结果为', list_14)
