@@ -154,7 +154,7 @@ print('\n===================列表常用方法===================\n')
 # 》 sort(): 用于对列表元素排序。
 
 # ########### count()
-
+print()
 list_13 = ['a', 'b', 'c', 'd', 'e', 'a']
 print('a.count=', list_13.count('a'))
 
@@ -162,7 +162,7 @@ print('a.count=', list_13.count('a'))
 
 # index():index()方法用于定位某个元素在列表中出现的位置，如果该元素没有出现，则会引发 ValueError错误 。
 # 在使用 index()方法时还可传入 start、 end 参数，用于在列表的指定范围内搜索元素。
-
+print()
 print('a.index=', list_13.index('a'), '指定范围index', list_13.index('a', 1))
 
 # ########### pop()
@@ -170,11 +170,41 @@ print('a.index=', list_13.index('a'), '指定范围index', list_13.index('a', 1)
 # pop()方法用于实现元素出栈功能。战是一种特殊的数据结构，它可实现先入后出(FILO)功 能，即先加入栈的元素，反而后出栈 。
 # python没有push方法，我们可以使用 append()方法末代替 push()，实现入栈操作。
 # pop()的返回值为出栈的元素
-
+print()
 list_14 = ['a', 'b', 'c', 'd', 'e']
 print(list_14)
 list_14.append('add1')
 list_14.append('add2')
 print('入栈后列表为', list_14)
-print('出栈元素为：', list_14.pop(), '出栈后结果为', list_14)
-print('出栈元素为：', list_14.pop(), '出栈后结果为', list_14)
+print('出栈元素为：', list_14.pop(), '，出栈后结果为', list_14)
+print('出栈元素为：', list_14.pop(), '，出栈后结果为', list_14)
+
+# ########### reverse()
+print()
+list_15 = ['a', 'b', 'c', 'd', 'e']
+print('翻转前：', list_15)
+list_15.reverse()
+print('翻转后：', list_15)
+
+# ########### sort()
+print()
+list_16 = [100, 20, 6, 50, 45]
+print('排序前：', list_16)
+list_16.sort()
+print('排序后：', list_16)
+
+print()
+list_17 = ['good', 'abc', 'hello', 'world', 'dog']
+print('排序前：', list_17)
+# #对列表元素排序 ， 默认按字符串包含的字符的编码来比较大小
+list_17.sort()
+print('排序后：', list_17)
+
+# sort()方法除支持默认排序之外，还可传入 key 和 reverse 两个参数，而且这两个参数必须通过参数名指定
+# key参数用于为每个元素都生成 一个比较大小的“键”;
+# reverse参数则用于执行是否需要反转排序--默认是从小到大排序;如果 将该参数设为 True，将会改为从大到小排序。
+print()
+list_18 = ['g', 'ab', 'hello', 'pick', 'dog']
+print('排序前：', list_18)
+list_18.sort(key=len, reverse=True)
+print('排序后：', list_18)
