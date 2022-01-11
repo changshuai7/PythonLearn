@@ -109,4 +109,14 @@ dict_13 = {'a': 1, 'b': 2, 'c': 3}
 print(dict_13.pop('a'))
 print(dict_13)
 
-# 方法：popitem()  ==>
+# 方法：popitem()  ==>  弹出字典中最后一个 key-value 对
+
+# 由于字典存储 key-value 对的顺序是不可知的，因此开发者感觉字典的 popitem()方法是“随机”弹出的
+# 但实际上字典的 popitem()方法总是弹出底层存储的最后 一个 key-value 对。
+# popitem弹出的就是一个元组
+print()
+list_14 = {'a': 1, 'b': 2, 'c': 3, 'e': 5, 'd': 4}
+list_14.update({'f': 6})
+x, y = list_14.popitem()  # 序列解包
+print('x=', x, 'y=', y)
+print(list_14)
