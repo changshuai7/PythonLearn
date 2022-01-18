@@ -106,8 +106,8 @@ print(list(dict_12.values()))
 # 方法：pop()   ==>  pop()方法用于获取指定 key 对应的 value，并删除这个 key-value对
 print()
 dict_13 = {'a': 1, 'b': 2, 'c': 3}
-print(dict_13.pop('a'))
-print(dict_13)
+print(dict_13.pop('a'))  # 1
+print(dict_13)  # {'b': 2, 'c': 3}
 
 # 方法：popitem()  ==>  弹出字典中最后一个 key-value 对
 
@@ -118,5 +118,45 @@ print()
 list_14 = {'a': 1, 'b': 2, 'c': 3, 'e': 5, 'd': 4}
 list_14.update({'f': 6})
 x, y = list_14.popitem()  # 序列解包
-print('x=', x, 'y=', y)
+print('解包数据：', 'x=', x, 'y=', y)
 print(list_14)
+
+# 方法：setdefault() ==>
+# setdefault()方法也用于根据key来获取对应 value 的值。
+# 但该方法有一个额外的功能：当程序要获取的key在字典中不存在时，该方法会先为这个不存在 的 key 设置一个默认的 value， 然后再返回该 key 对应的 value。
+# 总之， setdefault()方法总能返回指定 key 对应的 value：
+# 如果该 key-value对存在， 则直接返回该 key对应的 value;如果该 key-value对不存在，则先为该 key设置 默认的 value， 然后再返回该 key对应的 value。
+
+print()
+dict_15 = {'a': 1, 'b': 2, 'c': 3}
+# 设置默认值，该 key在 dict 中存在，不会修改 dict 内容
+print(dict_15.setdefault('c', 33333333))  # 3
+# 设置默认值，该 key在 dict 中不存在， 则新增key-value对
+print(dict_15.setdefault('d', 4))  # 4
+print(dict_15)
+
+# 方法：fromkeys() ==> 使用给定的多个 key 创建字典，这些 key 对应的 value 默认都是 None;也可以 额外传入一个参数作为默认的 value
+print()
+# 使用列表创建包含两个 key 的字典
+dict_16 = dict.fromkeys(['key1', 'key2', 'key3'])
+# 使用元祖创建包含两个 key 的字典
+dict_17 = dict.fromkeys(('key1', 'key2', 'key3'))
+print(dict_16)
+print(dict_17)
+
+print()
+# 使用元组创建包含两个 key 的字典，指定默认的 value
+dict_18 = dict.fromkeys(['key1', 'key2'], 100)
+print(dict_18)
+
+print('\n===================使用字典格式化字符串===================\n')
+
+# 在格式化字符串时，如果要格式化的字符串模板中包含多个变量 ，后面就需要按顺序给出多个变量
+# 这种方式对于字符串模板中包含少量变量的情形是合适的 ，但如果字符串模板 中包含大量变量，这种按顺序提供变量的方式则有些不合适。
+# 可改为在宇符串模板中按 key 指定变量， 然后通过字典为字符串模板中的 key设置值。
+print()
+temp = '小明的家乡是:%(city)s,工作是：%(work)s'
+str_f1 = {'city': '北京', 'work': '程序员'}
+str_f2 = {'city': '山西', 'work': '小可爱'}
+print(temp % str_f1)
+print(temp % str_f2)
